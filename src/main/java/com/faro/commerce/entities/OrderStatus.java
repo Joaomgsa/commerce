@@ -1,2 +1,6 @@
-package com.faro.commerce.entities;public enum OrderStatus {
+package com.faro.commerce.entities;
+
+public enum OrderStatus {
+
+    WAITING_PAYMENT,PAID,SHIPPED,DELIVERED,CANCELED;
 }
