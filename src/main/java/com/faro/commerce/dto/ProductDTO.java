@@ -1,7 +1,7 @@
 package com.faro.commerce.dto;
 
 import com.faro.commerce.entities.Product;
-import jakarta.validation.constraints.*;
+import javax.validation.constraints.*;
 
 public class ProductDTO {
 

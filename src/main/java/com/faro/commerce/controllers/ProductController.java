@@ -4,7 +4,7 @@ import com.faro.commerce.dto.ProductDTO;
 import com.faro.commerce.entities.Product;
 import com.faro.commerce.repositories.ProductRepository;
 import com.faro.commerce.services.ProductService;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

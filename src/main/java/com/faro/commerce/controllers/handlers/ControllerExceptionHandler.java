@@ -4,7 +4,7 @@ import com.faro.commerce.dto.CustomError;
 import com.faro.commerce.dto.ValidationError;
 import com.faro.commerce.services.exceptions.DatabaseException;
 import com.faro.commerce.services.exceptions.ResourceNotFoundException;
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;

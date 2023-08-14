@@ -5,7 +5,7 @@ import com.faro.commerce.entities.Product;
 import com.faro.commerce.repositories.ProductRepository;
 import com.faro.commerce.services.exceptions.DatabaseException;
 import com.faro.commerce.services.exceptions.ResourceNotFoundException;
-import jakarta.persistence.EntityNotFoundException;
+import javax.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
