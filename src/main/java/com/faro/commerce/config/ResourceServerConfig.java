@@ -1,7 +1,6 @@
 package com.faro.commerce.config;
 
 
-
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +25,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     @Autowired
     private JwtTokenStore tokenStore;
 
-    public static final String[] PUBLIC = { "/oauth/token", "/h2-console/**" };
-
+    public static final String[] PUBLIC = {"/oauth/token", "/h2-console/**"};
 
 
     @Override
