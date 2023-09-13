@@ -1,6 +1,7 @@
 package com.faro.commerce.controllers;
 
 import com.faro.commerce.dto.ProductDTO;
+import com.faro.commerce.dto.ProductMinDTO;
 import com.faro.commerce.entities.Product;
 import com.faro.commerce.repositories.ProductRepository;
 import com.faro.commerce.services.ProductService;
@@ -28,12 +29,15 @@ public class ProductController {
        ProductDTO dto = service.findById(id);
        return ResponseEntity.ok(dto);
     }
-
+// ajustar código
     @GetMapping
-    public ResponseEntity<Page<ProductDTO>> findAll(Pageable pageable){
-        Page<ProductDTO> dto = service.findAll(pageable);
+    public ResponseEntity<Page<ProductMinDTO>> findAll(Pageable pageable){
+        Page<ProductMinDTO> dto = service.findAll(pageable);
         return ResponseEntity.ok(dto);
     }
+
+
+
 
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
