@@ -27,7 +27,7 @@ public class ProductController {
        ProductDTO dto = service.findById(id);
        return ResponseEntity.ok(dto);
     }
-// ajustar código
+
     @GetMapping
     public ResponseEntity<Page<ProductMinDTO>> findAll(
         @RequestParam(name = "name", defaultValue = "") String name,
@@ -35,9 +35,6 @@ public class ProductController {
         Page<ProductMinDTO> dto = service.findAll(name, page);
         return ResponseEntity.ok(dto);
     }
-
-
-
 
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")

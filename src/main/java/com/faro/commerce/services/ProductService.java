@@ -1,7 +1,9 @@
 package com.faro.commerce.services;
 
+import com.faro.commerce.dto.CategoryDTO;
 import com.faro.commerce.dto.ProductDTO;
 import com.faro.commerce.dto.ProductMinDTO;
+import com.faro.commerce.entities.Category;
 import com.faro.commerce.entities.Product;
 import com.faro.commerce.repositories.ProductRepository;
 import com.faro.commerce.services.exceptions.DatabaseException;
@@ -74,5 +76,12 @@ public class ProductService {
         entity.setDescription(productDTO.getDescription());
         entity.setPrice(productDTO.getPrice());
         entity.setImgUrl(productDTO.getImgUrl());
+
+        entity.getCategories().clear();
+        for (CategoryDTO catDTO : productDTO.getCategories()) {
+            Category category = new Category();
+            category.setId(catDTO.getId());
+            entity.getCategories().add(category);
+        }
     }
 }
