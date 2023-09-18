@@ -2,10 +2,7 @@ package com.faro.commerce.controllers;
 
 import com.faro.commerce.dto.ProductDTO;
 import com.faro.commerce.dto.ProductMinDTO;
-import com.faro.commerce.entities.Product;
-import com.faro.commerce.repositories.ProductRepository;
 import com.faro.commerce.services.ProductService;
-import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,6 +11,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 
 
@@ -31,8 +29,10 @@ public class ProductController {
     }
 // ajustar código
     @GetMapping
-    public ResponseEntity<Page<ProductMinDTO>> findAll(Pageable pageable){
-        Page<ProductMinDTO> dto = service.findAll(pageable);
+    public ResponseEntity<Page<ProductMinDTO>> findAll(
+        @RequestParam(name = "name", defaultValue = "") String name,
+        Pageable page) {
+        Page<ProductMinDTO> dto = service.findAll(name, page);
         return ResponseEntity.ok(dto);
     }
 
