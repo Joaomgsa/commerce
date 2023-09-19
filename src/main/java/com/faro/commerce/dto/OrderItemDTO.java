@@ -19,7 +19,7 @@ public class OrderItemDTO {
     public OrderItemDTO(OrderItem entity) {
         productId = entity.getProduct().getId();
         name = entity.getProduct().getName();
-        price = entity.getPrice();
+        price = entity.getProduct().getPrice();
         quantity = entity.getQuantity();
     }
 
