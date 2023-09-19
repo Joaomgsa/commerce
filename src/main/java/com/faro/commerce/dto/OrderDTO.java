@@ -4,6 +4,7 @@ import com.faro.commerce.entities.Order;
 import com.faro.commerce.entities.OrderItem;
 import com.faro.commerce.entities.OrderStatus;
 
+import javax.validation.constraints.NotEmpty;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,7 @@ public class OrderDTO {
 
     private PaymentDTO payment;
 
+    @NotEmpty(message = "A lista de itens não pode ser vazia")
     private List<OrderItemDTO> items = new ArrayList<>();
 
     public OrderDTO(Long id, Instant moment, OrderStatus status, UserMinDTO client, PaymentDTO payment) {

@@ -40,6 +40,7 @@ public class OrderItemDTO {
     }
 
     public Double getSubTotal() {
-        return price * quantity;
+        double subTotal = price * quantity;
+        return subTotal;
     }
 }
